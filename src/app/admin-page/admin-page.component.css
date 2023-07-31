@@ -1,0 +1,13 @@
+.showTables {
+  margin-right: 50px;
+}
+
+th {
+  text-align: left;
+  border: 1px solid #000000;
+}
+
+td {
+  text-align: left;
+  border: 1px solid #000000;
+}

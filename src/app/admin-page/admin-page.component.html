@@ -1,0 +1,51 @@
+<h1>Administrador</h1>
+<div>
+  <h2>[{{currentAdmin.id}}] {{currentAdmin.firstName}} {{currentAdmin.lastName}}</h2>
+  <hr>
+  <button class="showTables" (click)="ShowTable(1)">Catálogo</button>
+  <button class="showTables" (click)="ShowTable(2)">Vendedores</button>
+  <button class="showTables" (click)="ShowTable(3)">Clientes</button>
+</div>
+<hr>
+<table [ngSwitch]="currentTable">
+  <div *ngSwitchCase="tables.catalogue">
+    <h3>Catálogo</h3>
+    <tr>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio de renta</th>
+      <th>Vendedor</th>
+    </tr>
+    <tr *ngFor="let product of catalogue">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.price}}</td>
+    </tr>
+  </div>
+  <div *ngSwitchCase="tables.sellers">
+    <h3>Vendedores</h3>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Productos</th>
+    </tr>
+    <tr *ngFor="let seller of sellers">
+      <td>{{seller.id}}</td>
+      <td>{{seller.name}}</td>
+    </tr>
+  </div>
+  <div *ngSwitchCase="tables.clients">
+    <h3>Clientes</h3>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Pedidos</th>
+    </tr>
+    <tr *ngFor="let client of clients">
+      <td>{{client.id}}</td>
+      <td>{{client.name}}</td>
+    </tr>
+  </div>       
+</table>
