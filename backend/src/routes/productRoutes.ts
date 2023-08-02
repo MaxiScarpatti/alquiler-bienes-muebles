@@ -1,11 +1,9 @@
 import { Router } from "express";
 import { getProducts } from "../controllers/productController";
-import validateToken from "./validateToken";
-
+import validateToken from "../middlewares/validateToken";
 
 const router = Router();
 
-router.get('/', validateToken, getProducts);
-
+router.get("/", validateToken, getProducts);
 
 export default router;
