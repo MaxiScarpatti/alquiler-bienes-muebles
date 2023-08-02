@@ -13,7 +13,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.endpoint;
-    this.myApiUrl = 'users';
+    this.myApiUrl = 'users/';
   }
 
   signIn(user: User): Observable<any> {
